@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://47vffy3j03yt"]
+
+[ext_resource type="Script" uid="uid://cjkrjv5ok2mhx" path="res://map/map.gd" id="1_7lyie"]
+[ext_resource type="Texture2D" uid="uid://dssg7ml76hfsf" path="res://map/map1.png" id="1_lgq1i"]
+[ext_resource type="Script" uid="uid://chir0etpidylm" path="res://map/maps.gd" id="2_5jdw0"]
+[ext_resource type="Texture2D" uid="uid://bxyaoqy82q88w" path="res://map/map2.png" id="2_kffv2"]
+[ext_resource type="Texture2D" uid="uid://d0rwgi5mj7v46" path="res://map/map.png" id="3_7lyie"]
+[ext_resource type="PackedScene" uid="uid://ddvp55exd6rlu" path="res://map/player.tscn" id="4_5jdw0"]
+[ext_resource type="PackedScene" uid="uid://ppoichntli0y" path="res://ui/Game start.tscn" id="7_kxmgb"]
+[ext_resource type="PackedScene" uid="uid://l8ib2fuo860i" path="res://ui/GG.tscn" id="8_e8e5r"]
+
+[node name="Map" type="Node2D" unique_id=1899396114]
+script = ExtResource("1_7lyie")
+
+[node name="maps" type="Parallax2D" parent="." unique_id=1356670394]
+repeat_size = Vector2(0, 2010)
+repeat_times = 3
+script = ExtResource("2_5jdw0")
+
+[node name="Map1" type="Sprite2D" parent="maps" unique_id=341435062]
+position = Vector2(0, 670)
+scale = Vector2(0.614, 0.629)
+texture = ExtResource("1_lgq1i")
+
+[node name="Map2" type="Sprite2D" parent="maps" unique_id=94153556]
+position = Vector2(0, 1340)
+scale = Vector2(0.62, 0.62)
+texture = ExtResource("2_kffv2")
+
+[node name="Map" type="Sprite2D" parent="maps" unique_id=813319136]
+scale = Vector2(0.6192875, 0.6238648)
+texture = ExtResource("3_7lyie")
+
+[node name="player" parent="." unique_id=417820217 instance=ExtResource("4_5jdw0")]
+position = Vector2(6, 0)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2047949442]
+scale = Vector2(1.7267008, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1428218801]
+
+[node name="score" type="Label" parent="CanvasLayer" unique_id=1496136169]
+offset_left = 15.0
+offset_top = -4.0
+offset_right = 205.0
+offset_bottom = 66.0
+text = "Score : 0"
+horizontal_alignment = 1
+
+[node name="GameStart" parent="CanvasLayer" unique_id=1224131088 instance=ExtResource("7_kxmgb")]
+
+[node name="Game over and restart" parent="CanvasLayer" unique_id=1137045915 instance=ExtResource("8_e8e5r")]
+visible = false
+
+[node name="Timer" type="Timer" parent="." unique_id=1728449069]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

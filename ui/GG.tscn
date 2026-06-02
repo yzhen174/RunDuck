@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://l8ib2fuo860i"]
+
+[ext_resource type="FontFile" uid="uid://dd5wkflm8vkp7" path="res://ui/font/Grunge Vintage.ttf" id="1_fi4re"]
+[ext_resource type="Script" uid="uid://yo3q8b3yd8dd" path="res://ui/gg.gd" id="1_ly1n6"]
+[ext_resource type="FontFile" uid="uid://ggkc2klnheud" path="res://ui/font/Ghost Castle.otf" id="2_ly1n6"]
+
+[sub_resource type="Theme" id="Theme_vkava"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tf0e0"]
+font = ExtResource("1_fi4re")
+font_size = 160
+font_color = Color(1, 0.12941177, 0.13725491, 1)
+shadow_color = Color(0.4745098, 0.38039216, 0.29803923, 0.95686275)
+stacked_outline_count = 1
+stacked_shadow_count = 1
+stacked_outline_0/color = Color(0.55360824, 0.43940246, 0.017939871, 1)
+stacked_shadow_0/offset = Vector2(1, 1)
+
+[node name="Game over and restart" type="Control" unique_id=1137045915]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ly1n6")
+
+[node name="Panel" type="Panel" parent="." unique_id=431518663]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -3.0
+offset_right = 1149.0
+offset_bottom = 639.0
+
+[node name="Label" type="Label" parent="." unique_id=1690117185]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 45.0
+offset_right = 780.0
+offset_bottom = 208.0
+theme = SubResource("Theme_vkava")
+text = "Game Over"
+label_settings = SubResource("LabelSettings_tf0e0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1087493302]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 394.0
+offset_right = 734.0
+offset_bottom = 514.0
+theme_override_colors/font_color = Color(0.8750814, 0.8750814, 0.56201816, 1)
+theme_override_colors/font_focus_color = Color(0.89165515, 0.97723854, 0.6437342, 1)
+theme_override_fonts/font = ExtResource("2_ly1n6")
+theme_override_font_sizes/font_size = 64
+text = "Retry"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

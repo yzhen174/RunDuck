@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ppoichntli0y"]
+
+[ext_resource type="FontFile" uid="uid://b5scn1vfr4deq" path="res://ui/font/Qilka-Bold copy.otf" id="1_5tvbp"]
+[ext_resource type="Script" uid="uid://dubaaq8hi4o78" path="res://ui/start.gd" id="1_tyrd1"]
+
+[node name="GameStart" type="Control" unique_id=1224131088]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tyrd1")
+
+[node name="Panel" type="Panel" parent="." unique_id=432099741]
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 646.0
+
+[node name="Button" type="Button" parent="." unique_id=89670834]
+layout_mode = 0
+offset_left = 437.0
+offset_top = 301.0
+offset_right = 738.0
+offset_bottom = 430.0
+theme_override_colors/font_color = Color(0.9013278, 0.8891759, 0.664083, 1)
+theme_override_font_sizes/font_size = 32
+text = "Start"
+
+[node name="Label" type="Label" parent="." unique_id=1497556896]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 14.0
+offset_right = 909.0
+offset_bottom = 193.0
+theme_override_colors/font_color = Color(1, 1, 0.4262314, 1)
+theme_override_fonts/font = ExtResource("1_5tvbp")
+theme_override_font_sizes/font_size = 64
+text = "Run    Duck
+Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
