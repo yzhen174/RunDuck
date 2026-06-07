@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cgo8fh31hfd2r"]
+
+[ext_resource type="Script" uid="uid://kewlad4hnrp4" path="res://whirlpoll/whirlpool.gd" id="1_2yutv"]
+[ext_resource type="Texture2D" uid="uid://bf7isdybi1o8r" path="res://whirlpoll/whirlpool/whirlpool_1.png" id="2_30d5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jilqw"]
+radius = 62.008064
+
+[node name="whirlpool" type="Node2D" unique_id=96682039]
+
+[node name="pool" type="Area2D" parent="." unique_id=930893993]
+script = ExtResource("1_2yutv")
+
+[node name="Whirlpool1" type="Sprite2D" parent="pool" unique_id=1531289566]
+position = Vector2(2, -5)
+scale = Vector2(0.18593752, 0.18657409)
+texture = ExtResource("2_30d5v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pool" unique_id=233275781]
+position = Vector2(3, -6)
+shape = SubResource("CircleShape2D_jilqw")
+
+[connection signal="body_entered" from="pool" to="pool" method="_on_body_entered"]

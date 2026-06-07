@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d2dnpr8w8434l"]
+
+[ext_resource type="Script" uid="uid://c2qkyll4u0pjg" path="res://logs/log.gd" id="1_nstbi"]
+[ext_resource type="Texture2D" uid="uid://dbyfaldd7k7vh" path="res://logs/logs_1.png" id="2_4h5df"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ybav"]
+size = Vector2(262, 91)
+
+[node name="Log" type="Node2D" unique_id=1836514651]
+
+[node name="log" type="Area2D" parent="." unique_id=965849819]
+script = ExtResource("1_nstbi")
+
+[node name="log" type="Sprite2D" parent="log" unique_id=1400133337]
+position = Vector2(18, 26.99997)
+scale = Vector2(0.39895833, 0.2685185)
+texture = ExtResource("2_4h5df")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="log" unique_id=1740486863]
+position = Vector2(-12, -8.5)
+shape = SubResource("RectangleShape2D_5ybav")
+
+[connection signal="body_entered" from="log" to="log" method="_on_body_entered"]

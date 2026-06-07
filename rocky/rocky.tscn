@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bc168yhwobvm"]
+
+[ext_resource type="Script" uid="uid://dk8p4djwthy00" path="res://rocky/rock.gd" id="1_iql2h"]
+[ext_resource type="Texture2D" uid="uid://bl0ihrvr2l2r6" path="res://rocky/rock_1.png" id="2_sr5oo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufsyq"]
+size = Vector2(170, 119)
+
+[node name="Rocky" type="Node2D" unique_id=2122321106]
+
+[node name="rock" type="Area2D" parent="." unique_id=1230917419]
+script = ExtResource("1_iql2h")
+
+[node name="rock" type="Sprite2D" parent="rock" unique_id=778390172]
+position = Vector2(-3, -8.999999)
+scale = Vector2(0.14309895, 0.15462962)
+texture = ExtResource("2_sr5oo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rock" unique_id=219587107]
+position = Vector2(-3, -20.5)
+shape = SubResource("RectangleShape2D_ufsyq")
+
+[connection signal="body_entered" from="rock" to="rock" method="_on_body_entered"]

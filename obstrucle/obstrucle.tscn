@@ -176,7 +176,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrjsb"]
-size = Vector2(580.5, 557)
+size = Vector2(580.5, 360)
 
 [node name="Obstrucle" type="Node2D" unique_id=2009379077]
 
@@ -192,7 +192,7 @@ animation = &"swim"
 frame_progress = 0.5186081
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shark" unique_id=1815549746]
-position = Vector2(-13, 10)
+position = Vector2(-13, -20)
 shape = SubResource("RectangleShape2D_jrjsb")
 
 [connection signal="body_entered" from="shark" to="shark" method="_on_body_entered"]

@@ -52,8 +52,8 @@ horizontal_alignment = 1
 [node name="Game over and restart" parent="CanvasLayer" unique_id=1137045915 instance=ExtResource("8_e8e5r")]
 visible = false
 
-[node name="Timer" type="Timer" parent="." unique_id=1728449069]
-wait_time = 10.0
+[node name="shark" type="Timer" parent="." unique_id=1728449069]
+wait_time = 6.0
 autostart = true
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="shark" to="." method="_on_shark_timeout"]
