@@ -1,6 +1,6 @@
 extends Area2D
 @onready var wp: Sprite2D = $Whirlpool1
-var speed: float = 200.0
+var speed: float = 400.0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
